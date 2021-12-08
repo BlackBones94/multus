@@ -1,6 +1,6 @@
 # multus
 Creative essence of brilliants guys in need of love.  
-A simply bunch of shitty games
+A simply bunch of shitty games.
 
 To working on this project :  
 1 - Make sure to have node.js installed.  
