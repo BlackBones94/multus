@@ -1,6 +1,6 @@
 # multus
-Creative essence of brilliants guys in need of love.
-A simply 
+Creative essence of brilliants guys in need of love.  
+Une simple série de jeux de merde
 
 To working on this project :  
 1 - Make sure to have node.js installed.  
