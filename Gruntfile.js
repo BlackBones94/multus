@@ -3,12 +3,9 @@ module.exports = function (grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         uglify: {
-            // options: {
-            //     banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
-            // },
             build: {
-                src: 'src/js/main.js',
-                dest: 'dist/js/main.min.js'
+                src: 'src/js/typingTest.js',
+                dest: 'dist/js/typingTest.min.js'
             }
         },
         sass: {
@@ -27,7 +24,7 @@ module.exports = function (grunt) {
               tasks: ['sass:dist']
             },
             js: {
-              files: ['src/js/*.js'],
+              files: ['src/js/**/*.js'],
               tasks: ['uglify']
             }
           }
