@@ -21,7 +21,10 @@
 
     .wrong {
         // color: red;
-        background-color: lightcoral;
+        background-color: lightcoral!important;
     }
-
+    
+    .current {
+        background-color: lightgrey;;
+    }
 }

@@ -42,16 +42,19 @@ class TypingTest {
     handleUserEntries(e) {
         
         let letterElement = document.querySelector('#words-container span:nth-child(' + this.userLetterIndex + ')')
+        
         // End execution
         if (!letterElement) {
             return;
         }
+
         if (letterElement.textContent === e.key) {
             this.userLetterIndex++
             letterElement.classList = ''
             if(e.key != ' ') {
                 letterElement.classList.add('passed')
             }
+            letterElement.nextSibling.classList.add('current')
         } else {
             letterElement.classList.add('wrong')
         }
