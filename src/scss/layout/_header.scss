@@ -1,1 +1,25 @@
-header {}
+#tete{
+    text-align: center;
+}
+
+li {
+    list-style: none ;
+    text-align: center;
+    margin-left: 40px;
+    
+}
+
+ul {
+    text-align: center;
+    display:flex;
+    margin-left: 40px;
+    font-size: 150%;
+   padding-top: 50px;
+}
+
+ a {
+   color: black;
+   text-transform: none;
+   outline: none;
+  
+}
