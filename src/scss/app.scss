@@ -1,8 +1,11 @@
 @import "abstracts/variables";
 
 @import "base/reset";
-@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "base/base";
+// @import "../../node_modules/bootstrap/scss/bootstrap";
 
 @import 'base/typography';
 
 @import "layout/header";
+
+@import "games/typing-test";

@@ -3,9 +3,12 @@ module.exports = function (grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         uglify: {
+            options: { 
+                compress: true 
+            },
             build: {
-                src: 'src/js/typingTest.js',
-                dest: 'dist/js/typingTest.min.js'
+                src: 'src/js/TypingTest.js',
+                dest: 'dist/js/TypingTest.min.js'
             }
         },
         sass: {
