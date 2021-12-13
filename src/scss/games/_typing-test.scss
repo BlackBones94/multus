@@ -1,5 +1,7 @@
 #root {
     height: 100%;
+    margin: auto;
+    padding: auto;
 }
 
 #words-container {
@@ -7,9 +9,9 @@
     width: 60%;
     margin: auto;
     position: relative;
-    top: 40%;
-    transform: translateY(-50%);
-    
+    top: 25%;
+    transform: translateY(60%);
+   
 
     span {
         font-size: 20px;
