@@ -1,32 +1,31 @@
 #root {
     height: 100%;
-}
-
-#words-container {
-
-    width: 60%;
-    margin: auto;
     margin-top: 200px;
-    // position: relative;
-    // top: 40%;
-    // transform: translateY(-50%);
+    #countdown {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 30px;
+        font-weight: bold;
+    }
+    #words-container {
     
-
-    span {
-        font-size: 20px;
-    }
-
-    .passed {
-        // color: green;
-        background-color: lightgreen;
-    }
-
-    .wrong {
-        // color: red;
-        background-color: lightcoral!important;
-    }
+        width: 60%;
+        margin: auto;
+         
+        span {
+            font-size: 20px;
+        }
     
-    .current {
-        background-color: lightgrey;;
+        .passed {
+            background-color: lightgreen;
+        }
+    
+        .wrong {
+            background-color: lightcoral!important;
+        }
+        
+        .current {
+            background-color: lightgrey;;
+        }
     }
 }
