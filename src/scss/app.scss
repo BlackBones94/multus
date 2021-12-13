@@ -1,7 +1,9 @@
 @import "abstracts/variables";
 
 @import "base/reset";
+
 @import "base/base";
+
 // @import "../../node_modules/bootstrap/scss/bootstrap";
 
 @import "components/button";
@@ -10,4 +12,4 @@
 
 @import "layout/header";
 
-@import "games/typing-test";
+@import "games/typing-test"; 
