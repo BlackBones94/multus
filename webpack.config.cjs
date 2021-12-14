@@ -17,7 +17,6 @@ const config = {
     open: true,
     host: "localhost",
     hot: false,
-    // liveReload: true,
     watchFiles: ['./src/**/*.*'],
     static: {
       directory: './',
