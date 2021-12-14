@@ -1,10 +1,12 @@
 // Generated using webpack-cli https://github.com/webpack/webpack-cli
 
 const path = require("path");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const isProduction = process.env.NODE_ENV == "development";
 
 const config = {
+
   entry: "./src/index.js",
   output: {
     path: path.resolve(__dirname, "dist/assets"),
@@ -12,16 +14,24 @@ const config = {
 
   mode: 'development',
   devServer: {
+    open: true,
+    host: "localhost",
+    hot: false,
+    // liveReload: true,
+    watchFiles: ['./src/**/*.*'],
     static: {
-      directory: path.join(__dirname, 'public'),
+      directory: './',
+      serveIndex: true,
+      watch: true,
     },
-    port: 3000,
+    port: 8000,
     compress: true,
   },
 
   plugins: [
-    // Add your plugins here
-    // Learn more about plugins from https://webpack.js.org/configuration/plugins/
+    new HtmlWebpackPlugin({
+      template: "public/index.html",
+    }),
   ],
   module: {
     rules: [
