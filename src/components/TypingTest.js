@@ -1,4 +1,5 @@
 import Countdown from "./Countdown.js"
+import WPM from "./WPM.js"
 
 export default class TypingTest {
 
@@ -6,12 +7,13 @@ export default class TypingTest {
         this.init()
 
         /** @type {number} Must be an integer  */
-        this.duration = 61000
+        this.duration = 60000
         
-        this.wordQuantity = 200;
-        this.wordCount = 0
+        this.wordQuantity = 20;
+        this.wordPassed = 0
         this.userLetterIndex = 1
         this.root = document.getElementById('root')
+        this.wordCounts = document.querySelector('.word-count')
     }
 
     init() {
@@ -22,13 +24,15 @@ export default class TypingTest {
     async startGame() {
         this.words = await this.fetchWords()
         this.startButton.style.display = 'none'
+        this.wordCounts.textContent = 'Passed: ' + 0;
         this.renderWords()
         this.setCountdown()
+        this.setWPM()
     }
 
     async renderWords() {
 
-        const wordsContainer = document.getElementById('words-container')
+        const wordsContainer = document.querySelector('.words-container')
         for (let [i, word] of this.words.entries()) {
             word = word.split('')
             for (let j = 0; j < word.length; j++) {
@@ -57,6 +61,8 @@ export default class TypingTest {
         document.addEventListener('keypress', this.handleUserEntries, true)
         setTimeout(() => {
             document.removeEventListener('keypress', this.handleUserEntries, true)
+            this.countdown.unmount()
+            this.WPM.unmount()
         }, this.duration);
 
     }
@@ -67,15 +73,18 @@ export default class TypingTest {
     }
 
     setCountdown() {
-        this.countdownElement = document.getElementById('countdown');
-        new Countdown(this.countdownElement, this.duration)
-        this.root.prepend(this.countdownElement)
+        this.countdownElement = document.querySelector('.countdown');
+        this.countdown = new Countdown(this.countdownElement, this.duration)
+    }
+
+    setWPM() {
+        this.wpmElement = document.querySelector('.wpm');
+        this.WPM = new WPM(this.wpmElement)
     }
 
     handleUserEntries(e) {
-
-        let letterElement = document.querySelector('#words-container span:nth-child(' + this.userLetterIndex + ')')
-
+        let letterElement = document.querySelector('.words-container span:nth-child(' + this.userLetterIndex + ')')
+        
         // End execution
         if (!letterElement) {
             return;
@@ -84,7 +93,11 @@ export default class TypingTest {
         if (letterElement.textContent === e.key) {
             this.userLetterIndex++
             letterElement.classList = ''
-            if (e.key != ' ') {
+            if (e.key === ' ') {
+                this.wordPassed++;
+                this.WPM.wordPassed++
+                this.wordCounts.textContent = 'Passed : ' + this.wordPassed;
+            } else {
                 letterElement.classList.add('passed')
             }
             letterElement.nextSibling.classList.add('current')
