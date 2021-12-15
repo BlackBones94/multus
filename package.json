@@ -37,6 +37,7 @@
     "grunt-contrib-uglify": "^5.0.1",
     "grunt-contrib-watch": "^1.1.0",
     "grunt-import": "^1.0.3",
+    "html-webpack-plugin": "^5.5.0",
     "prettier": "^2.5.1",
     "sass": "^1.43.4",
     "sass-loader": "^12.4.0",
