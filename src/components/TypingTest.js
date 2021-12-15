@@ -8,6 +8,7 @@ export default class TypingTest {
         /** @type {number} Must be an integer  */
         this.duration = 61000
         
+        this.wordQuantity = 200;
         this.wordCount = 0
         this.userLetterIndex = 1
         this.root = document.getElementById('root')
@@ -61,7 +62,7 @@ export default class TypingTest {
     }
 
     async fetchWords() {
-        const response = await fetch('https://random-word-api.herokuapp.com/word?number=3')
+        const response = await fetch('https://random-word-api.herokuapp.com/word?number=' + this.wordQuantity)
         return await response.json()
     }
 
