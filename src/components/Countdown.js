@@ -2,25 +2,27 @@ export default class Countdown {
     constructor(container, duration) {
         this.container = container
         this.duration = duration
-        this.setCountdown()
+        this.init()
     }
 
-    setCountdown() {
-        let seconds = this.duration / 1000;
+    init() {
+        this.seconds = this.duration / 1000;
 
-        this.container.textContent = this.getFormattedCountdown(seconds)
-        let countdownInterval = setInterval(() => {
-            seconds--
-            if (!seconds) {
-                clearInterval(countdownInterval)
-            }
-            this.container.textContent = this.getFormattedCountdown(seconds)
+        this.container.textContent = this.getFormattedCountdown()
+        this.countdownInterval = setInterval(() => {
+            this.seconds--
+            this.container.textContent = this.getFormattedCountdown()
         }, 1000);
     }
 
-    getFormattedCountdown(seconds) {
-        let formattedMinutes = (Math.floor(seconds / 60));
-        let formattedSeconds = (seconds % 60 < 10 ? '0' : '') + (seconds % 60)
+    getFormattedCountdown() {
+        let formattedMinutes = (Math.floor(this.seconds / 60));
+        let formattedSeconds = (this.seconds % 60 < 10 ? '0' : '') + (this.seconds % 60)
         return formattedMinutes + ':' + formattedSeconds
+    }
+
+    unmount() {
+        this.container.textContent = this.getFormattedCountdown(this.seconds--)
+        clearInterval(this.countdownInterval)
     }
 }
