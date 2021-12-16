@@ -11,3 +11,27 @@ header {
    background: #454545;
    padding: 30px 0;
 } 
+
+li {
+    margin-top: 75px;
+}
+
+img {
+    margin-left: 70px;
+    padding-bottom: 75px;
+}
+
+a {
+    transition: ease-out 0.5s;
+    margin-left: 10px;
+    color: whitesmoke;
+    font-size: 1.6rem;
+    text-decoration: none;
+    box-shadow: black;
+}
+
+a:hover {
+    box-shadow: whitesmoke;
+    font-size: 1.6rem;
+    color: black;
+}
