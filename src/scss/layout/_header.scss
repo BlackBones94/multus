@@ -13,12 +13,11 @@ header {
 } 
 
 li {
-    margin-top: 75px;
+    margin-top: 55px;
 }
 
 img {
     margin-left: 70px;
-    padding-bottom: 75px;
 }
 
 a {
@@ -28,10 +27,28 @@ a {
     font-size: 1.6rem;
     text-decoration: none;
     box-shadow: black;
+    
 }
 
 a:hover {
     box-shadow: whitesmoke;
     font-size: 1.6rem;
     color: black;
+}
+
+.solid {
+    color  : black;
+    margin-top: 50px;
+}
+
+.topSolid {
+    margin-bottom: 50px;
+}
+
+p {
+    font-size: 1.6rem;
+    margin-left: 60px;
+    margin-top: 25px;
+    font-weight: bolder;
+    letter-spacing: 4px;
 }

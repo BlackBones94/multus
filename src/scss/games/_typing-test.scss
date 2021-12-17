@@ -3,15 +3,18 @@
     margin-top: 200px;
     .countdown, .wpm, .word-count {
         text-align: center;
-        margin-bottom: 20px;
+        margin-bottom: 30px;
         font-size: 30px;
         font-weight: bold;
+        margin-left: 250px;
     }
 
     .words-container {
     
         width: 60%;
         margin: auto;
+        margin-right: 250px;
+
          
         span {
             font-size: 20px;
